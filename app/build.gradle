@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    repositories {
+        mavenCentral()
+    }
+
+    defaultConfig {
+        testApplicationId "allgedera.test"
+        applicationId "allgedera.com.allgederaapp"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+
+        renderscriptTargetApi 23
+        renderscriptSupportModeEnabled true
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dexOptions {
+        incremental false
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: 'Parse-*.jar')
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.google.android.gms:play-services:7.5.0'
+    compile files('libs/urlimageviewhelper.jar')
+    compile 'com.facebook.android:facebook-android-sdk:4.7.0'
+    compile 'com.mcxiaoke.volley:library:1.0.19'
+    compile 'com.google.code.gson:gson:2.3.1'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.github.goka.blurredgridmenu:blurredgridmenu:1.0.2'
+    compile 'com.squareup.retrofit:retrofit:1.9.0'
+    compile 'com.android.support:recyclerview-v7:23.1.1'
+    compile 'com.bignerdranch.android:expandablerecyclerview:1.0.3'
+    compile 'jp.wasabeef:recyclerview-animators:2.2.0'
+    compile 'com.yalantis:contextmenu:1.0.6'
+}
