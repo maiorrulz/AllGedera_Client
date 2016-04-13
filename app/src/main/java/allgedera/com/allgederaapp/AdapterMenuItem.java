@@ -20,8 +20,7 @@ public class AdapterMenuItem extends BaseAdapter {
     Context con;
     LayoutInflater inflater;
 
-    public AdapterMenuItem(Context c,List<MenuDrawerItem> d)
-    {
+    public AdapterMenuItem(Context c,List<MenuDrawerItem> d) {
         con = c;
         data = d;
         inflater = (LayoutInflater) con.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -29,9 +28,9 @@ public class AdapterMenuItem extends BaseAdapter {
 
     @Override
     public int getCount() {
-        // TODO Auto-generated method stub
         return data.size();
     }
+
     @Override
     public Object getItem(int position) {
         return data.get(position);

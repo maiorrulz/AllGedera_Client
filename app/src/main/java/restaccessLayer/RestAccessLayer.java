@@ -44,6 +44,7 @@ public class RestAccessLayer /*implements Response.Listener<Event[]>, Response.E
         return dataAccess;
     }
 
+    // Event=buisness
     public void runJsonRequestGetEvent(final RestCallback.OnResponseSuccess ors, final RestCallback.OnResponseFailure orf) throws IOException {
         String url = Constants.url;
         final Request jsonRequest = new GsonRequest<> (url, Event[].class, new Response.Listener<Event[]>(){

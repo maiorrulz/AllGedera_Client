@@ -1,5 +1,6 @@
 package allgedera.com.allgederaapp.businesses.expandable.list;
 
+import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -19,6 +20,6 @@ public class BusinessParentViewHolder extends ParentViewHolder {
     public BusinessParentViewHolder(View itemView) {
         super(itemView);
         mBusinessNameTV = (TextView) itemView.findViewById(R.id.tv_businessName);
-        mBusinessLogoIV = (ImageView) itemView.findViewById(R.id.iv_businessLogo);
+        mBusinessLogoIV = (ImageView) itemView.findViewById(R.id.tv_businessLogo);
     }
 }

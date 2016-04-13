@@ -14,8 +14,9 @@ public class BusinessParent implements ParentObject {
     private String logo;
     List<Object> mChildren;
 
-    public BusinessParent(String name, String category) {
+    public BusinessParent(String name, String logo) {
         this.name = name;
+        this.logo=logo;
         this.mChildren = new ArrayList<>();
     }
 

@@ -7,9 +7,9 @@
 
 
     <ImageView
+        android:id="@+id/tv_businessLogo"
         android:layout_width="120dp"
         android:layout_height="122dp"
-        android:id="@+id/iv_businessLogo"
         android:layout_gravity="left" />
 
     <TextView

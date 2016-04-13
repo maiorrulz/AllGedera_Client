@@ -1,6 +1,4 @@
 package allgedera.com.allgederaapp.businesses;
-
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -99,7 +97,7 @@ public class BusinessesIndexFragment extends Fragment {
         ArrayList<ParentObject> parentObjects = new ArrayList<>();
 
         for (Business business : businesses) {
-            BusinessParent businessParent = new BusinessParent(business.getName(), business.getCategory());
+            BusinessParent businessParent = new BusinessParent(business.getName(), business.getLogo());
             ArrayList<Object> childList = new ArrayList<>();
             childList.add(new BusinessChild(business.getImage(), business.getAbout(), business.getAddress(), business.getPhone(), business.getX_geo(), business.getY_geo()));
             businessParent.setChildObjectList(childList);

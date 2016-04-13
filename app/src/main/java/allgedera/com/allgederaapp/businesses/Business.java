@@ -109,7 +109,7 @@ public class Business implements Serializable {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImge(String image) {
         this.image = image;
     }
 
