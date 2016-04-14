@@ -4,8 +4,6 @@ import android.test.suitebuilder.annotation.SmallTest;
 
 import junit.framework.TestCase;
 
-import allgedera.com.allgederaapp.App;
-
 /**
  * Created by elash on 19/01/2016.
  */

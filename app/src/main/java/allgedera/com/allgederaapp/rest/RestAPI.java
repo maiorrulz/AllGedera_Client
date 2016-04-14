@@ -2,7 +2,7 @@ package allgedera.com.allgederaapp.rest;
 
 import java.util.List;
 
-import allgedera.com.allgederaapp.businesses.Business;
+import allgedera.com.allgederaapp.businesses.entities.Business;
 import retrofit.Callback;
 import retrofit.http.GET;
 
@@ -11,12 +11,12 @@ import retrofit.http.GET;
  */
 public interface RestAPI {
 
-    public static final String BASE_URL = "http://allgederarest.k5qrryukaz.us-east-1.elasticbeanstalk.com/api";
+    String BASE_URL = "http://allgederarest.k5qrryukaz.us-east-1.elasticbeanstalk.com/api";
 
     /*
      * @GET("database/businesses") - path from base url
      *
      */
     @GET("/database/businesses")
-    public void getBusinesses(Callback<List<Business>> response);
+    void getBusinesses(Callback<List<Business>> response);
 }

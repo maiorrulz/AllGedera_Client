@@ -8,11 +8,11 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
 import allgedera.com.allgederaapp.R;
+import allgedera.com.allgederaapp.businesses.fragments.BusinessesIndexFragment;
 
 public class BusinessesActivity extends AppCompatActivity {
 
     private ViewPager mViewPager;
-
     private Fragment businessFragments[];
 
     @Override
@@ -24,7 +24,6 @@ public class BusinessesActivity extends AppCompatActivity {
         businessFragments = new Fragment[2];
         BusinessesIndexFragment businessesIndexFragment = new BusinessesIndexFragment();
         businessFragments[0] = businessesIndexFragment;
-        //businessFragments[1] = new FragmentTest2();
         businessFragments[1] = businessesIndexFragment.mMapFragmant;
 
         mViewPager = (ViewPager) findViewById(R.id.pager);

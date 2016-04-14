@@ -1,6 +1,7 @@
 package allgedera.com.allgederaapp.businesses.expandable.list;
 
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,15 +16,13 @@ public class BusinessChildViewHolder extends ChildViewHolder {
 
     public ImageView mBusinessImageIV;
     public TextView mBusinessAboutTV;
-    public TextView mBusinessAddressTV;
-    public TextView mBusinessPhoneTV;
+    public TextView mBusinessCenterBusinessOnMapBTN;
 
     public BusinessChildViewHolder(View itemView) {
         super(itemView);
         mBusinessImageIV = (ImageView) itemView.findViewById(R.id.iv_businessImage);
         mBusinessAboutTV = (TextView) itemView.findViewById(R.id.tv_businessAbout);
-        mBusinessAddressTV = (TextView) itemView.findViewById(R.id.tv_businessAddress);
-        mBusinessPhoneTV = (TextView) itemView.findViewById(R.id.tv_businessPhone);
+        mBusinessCenterBusinessOnMapBTN = (Button) itemView.findViewById(R.id.btn_centerBusinessOnMap);
     }
 
 }
