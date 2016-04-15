@@ -37,7 +37,9 @@
                 android:layout_height="fill_parent"
                 android:text="מבצעים חמים"
                 style="@style/button_text"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:nestedScrollingEnabled="false"
+                android:onClick="openCoupons" />
         </LinearLayout>
 
         <LinearLayout

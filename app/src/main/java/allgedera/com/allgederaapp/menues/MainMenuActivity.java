@@ -4,10 +4,9 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
+import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -28,6 +27,7 @@ import java.util.List;
 
 import allgedera.com.allgederaapp.R;
 import allgedera.com.allgederaapp.businesses.BusinessesActivity;
+import allgedera.com.allgederaapp.coupons.CouponsActivity;
 
 public class MainMenuActivity extends AppCompatActivity implements OnMenuItemClickListener, OnMenuItemLongClickListener {
 
@@ -154,6 +154,11 @@ public class MainMenuActivity extends AppCompatActivity implements OnMenuItemCli
 
     public void openBusinesses(View view) {
         Intent intent = new Intent(this, BusinessesActivity.class);
+        startActivity(intent);
+    }
+
+    public void openCoupons(View view) {
+        Intent intent = new Intent(this, CouponsActivity.class);
         startActivity(intent);
     }
 }
