@@ -34,10 +34,10 @@ public class BusinessesIndexFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.ItemDecoration mItemDecoration;
-    public BusinessMapFragment mMapFragmant;
+    public BusinessMapFragment mMapFragment;
 
     public BusinessesIndexFragment() {
-        mMapFragmant = new BusinessMapFragment();
+        mMapFragment = new BusinessMapFragment();
     }
 
     @Override
@@ -81,7 +81,7 @@ public class BusinessesIndexFragment extends Fragment {
                 mBusinessExpandableAdapter.setParentAndIconExpandOnClick(true);
                 mRecyclerView.setAdapter(mBusinessExpandableAdapter);
 
-                mMapFragmant.setBusinessOnMap(businesses);
+                mMapFragment.setBusinessOnMap(businesses);
             }
 
             @Override

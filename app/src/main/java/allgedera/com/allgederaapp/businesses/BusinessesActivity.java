@@ -24,7 +24,7 @@ public class BusinessesActivity extends AppCompatActivity {
         businessFragments = new Fragment[2];
         BusinessesIndexFragment businessesIndexFragment = new BusinessesIndexFragment();
         businessFragments[0] = businessesIndexFragment;
-        businessFragments[1] = businessesIndexFragment.mMapFragmant;
+        businessFragments[1] = businessesIndexFragment.mMapFragment;
 
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));

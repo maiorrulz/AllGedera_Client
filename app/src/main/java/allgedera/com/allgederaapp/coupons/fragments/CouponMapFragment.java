@@ -1,4 +1,4 @@
-package allgedera.com.allgederaapp.businesses.fragments;
+package allgedera.com.allgederaapp.coupons.fragments;
 
 import android.content.Context;
 import android.location.Criteria;
@@ -24,20 +24,24 @@ import com.google.android.gms.maps.model.Polyline;
 
 import java.util.HashMap;
 import java.util.List;
+
 import allgedera.com.allgederaapp.R;
 import allgedera.com.allgederaapp.businesses.entities.Business;
+import allgedera.com.allgederaapp.businesses.fragments.BusinessDialogFragment;
 
 
-public class BusinessMapFragment extends Fragment {
+public class CouponMapFragment extends Fragment {
     public static GoogleMap map;
     public static Location myLocation = null;
     public static Polyline currentPath = null;
+    View view = null;
     HashMap<Marker, Business> mapBusinesses = new HashMap<Marker, Business>();
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_map, container, false);
+        if (view == null)
+            view = inflater.inflate(R.layout.fragment_map, container, false);
         map = getMapFragment().getMap();
         map.setInfoWindowAdapter(onBusinessInfoWindowClickListener);
         map.setMyLocationEnabled(true);

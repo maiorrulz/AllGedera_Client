@@ -23,8 +23,11 @@ import allgedera.com.allgederaapp.coupons.list.CouponAdapter;
 public class CouponListFragment extends Fragment {
 
     static final int coloumns = 2;
+    public CouponMapFragment couponMapFragment;
 
-    public CouponListFragment() {  }
+    public CouponListFragment() {
+        this.couponMapFragment = new CouponMapFragment();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
