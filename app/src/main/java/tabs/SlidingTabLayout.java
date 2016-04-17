@@ -1,7 +1,9 @@
 package tabs;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.Typeface;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
@@ -58,7 +60,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
     private int mTabViewTextViewId;
     /* My Change */
     private int tabImages[];
-    private int prevTab;
+    private View oldSelection = null;
     /* My Change */
     private boolean mDistributeEvenly;
 
@@ -103,6 +105,12 @@ public class SlidingTabLayout extends HorizontalScrollView {
 
     public void setDistributeEvenly(boolean distributeEvenly) {
         mDistributeEvenly = distributeEvenly;
+    }
+
+    private void removeOldSelection() {
+        if(oldSelection != null) {
+            oldSelection.setSelected(false);
+        }
     }
 
     /**
@@ -175,6 +183,8 @@ public class SlidingTabLayout extends HorizontalScrollView {
     }
 
     private void populateTabStrip() {
+        removeOldSelection();
+        oldSelection = null;
         final PagerAdapter adapter = mViewPager.getAdapter();
         final OnClickListener tabClickListener = new TabClickListener();
 
@@ -244,6 +254,20 @@ public class SlidingTabLayout extends HorizontalScrollView {
 
         View selectedChild = mTabStrip.getChildAt(tabIndex);
         if (selectedChild != null) {
+
+            if(positionOffset == 0 && selectedChild != oldSelection) { // added part
+                if (oldSelection != null) {
+                    View oldIndicator = oldSelection.findViewById(R.id.coupon_tab_indicator);
+                    oldIndicator.setBackgroundColor(ContextCompat.getColor(oldSelection.getContext(), R.color.tab_background));
+                }
+                selectedChild.setSelected(true);
+                removeOldSelection();
+                oldSelection = selectedChild;
+                View newIndicator = selectedChild.findViewById(R.id.coupon_tab_indicator);
+                newIndicator.setBackgroundColor(Color.WHITE);
+
+            }
+
             int targetScrollX = selectedChild.getLeft() + positionOffset;
 
             if (tabIndex > 0 || positionOffset > 0) {

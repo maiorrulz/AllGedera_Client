@@ -18,6 +18,11 @@
         android:text="Large Text"
         android:id="@+id/tv_couponTab"
         android:gravity="center_horizontal"
-        android:textColor="#000000"
         android:layout_marginBottom="5dp" />
+
+    <View
+        android:id="@+id/coupon_tab_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="#086792" />
 </LinearLayout>
