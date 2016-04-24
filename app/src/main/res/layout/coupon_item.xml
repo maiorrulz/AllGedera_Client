@@ -4,7 +4,19 @@
     android:layout_height="match_parent"
     android:background="@drawable/coupon_background"
     android:weightSum="10"
-    android:layout_margin="10dp">
+    android:layout_margin="10dp"
+    android:clickable="true"
+    android:nestedScrollingEnabled="false"
+    android:onClick="goToPurchase">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/coupon_number"
+        android:id="@+id/tv_couponNumber"
+        android:layout_gravity="right"
+        android:gravity="right" />
 
     <ImageView
         android:layout_width="match_parent"
@@ -23,7 +35,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="שם העסק"
-        android:id="@+id/tv_copounBusiness"
+        android:id="@+id/tv_couponBusiness"
         android:padding="5dp"
         android:layout_weight="1"
         android:gravity="center_vertical|center_horizontal" />
@@ -39,11 +51,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="מחיר"
+        android:text="@string/coupon_price"
         android:id="@+id/tv_couponPrice"
         android:layout_weight="1"
         android:singleLine="false"
         android:gravity="center_vertical|left"
         android:paddingLeft="22dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/tv_couponDetails" />
 
 </LinearLayout>

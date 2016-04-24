@@ -264,7 +264,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
                 removeOldSelection();
                 oldSelection = selectedChild;
                 View newIndicator = selectedChild.findViewById(R.id.coupon_tab_indicator);
-                newIndicator.setBackgroundColor(Color.WHITE);
+                newIndicator.setBackgroundColor(Color.BLACK);
 
             }
 

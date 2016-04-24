@@ -7,10 +7,19 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import allgedera.com.allgederaapp.R;
 import allgedera.com.allgederaapp.coupons.fragments.CouponListFragment;
 import allgedera.com.allgederaapp.coupons.fragments.CouponPurchaseFragment;
+import allgedera.com.allgederaapp.rest.RestAPI;
+import retrofit.Callback;
+import retrofit.RestAdapter;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 import tabs.SlidingTabLayout;
 
 public class CouponsActivity extends AppCompatActivity {
@@ -66,6 +75,54 @@ public class CouponsActivity extends AppCompatActivity {
             return couponFragments != null ? couponFragments.length
                                            : 0;
         }
+    }
+
+    public void goToPurchase(View view)
+    {
+        CouponPurchaseFragment couponPurchaseFragment;
+        couponPurchaseFragment = (CouponPurchaseFragment) couponFragments[1];
+
+        TextView couponNumber = (TextView) view.findViewById(R.id.tv_couponNumber);
+        ImageView couponImage = (ImageView) view.findViewById(R.id.iv_couponImage);
+        TextView couponBusiness = (TextView) view.findViewById(R.id.tv_couponBusiness);;
+        TextView couponPrice = (TextView) view.findViewById(R.id.tv_couponPrice);
+        TextView couponDetails = (TextView) view.findViewById(R.id.tv_couponDetails);
+
+        couponPurchaseFragment.couponId = Integer.parseInt(couponNumber.getText().toString());
+        couponPurchaseFragment.mPurchaseHeader.setText(getString(R.string.purchase_number, Integer.parseInt(couponNumber.getText().toString())));
+        couponPurchaseFragment.mPurchaseImage.setImageDrawable(couponImage.getDrawable());
+        couponPurchaseFragment.mPurchaseDetails.setText(couponDetails.getText());
+        couponPurchaseFragment.mMakePurchase.setEnabled(true);
+        mViewPager.setCurrentItem(1);
+    }
+
+    public void purchaseCoupon(View view) {
+
+        final CouponPurchaseFragment couponPurchaseFragment = (CouponPurchaseFragment) this.couponFragments[1];
+
+        if (couponPurchaseFragment.couponId == -1) {
+            Toast.makeText(view.getContext(), "לא נבחר קופון", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        RestAdapter adapter = new RestAdapter.Builder().setEndpoint(RestAPI.BASE_URL).build();
+        /*
+         *  create an instance of the api that implements the methods needed to
+         *  make requests to the server
+         */
+        RestAPI restAPI = adapter.create(RestAPI.class);
+
+        restAPI.addPurchase(0, couponPurchaseFragment.couponId, new Callback<Response>() {
+            @Override
+            public void success(Response response, Response response2) {
+                Toast.makeText(couponPurchaseFragment.getContext(), "התבצעה רכישה", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+
+            }
+    });
     }
 
 
