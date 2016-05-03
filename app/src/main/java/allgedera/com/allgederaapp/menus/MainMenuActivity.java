@@ -1,4 +1,4 @@
-package allgedera.com.allgederaapp.menues;
+package allgedera.com.allgederaapp.menus;
 
 import android.content.Intent;
 import android.graphics.Bitmap;

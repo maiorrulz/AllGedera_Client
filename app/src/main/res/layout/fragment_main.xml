@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="allgedera.com.allgederaapp.menus.MainMenuActivity">
+    tools:context="allgedera.com.allgederaapp.menus.MainFragment">
 
     <include layout="@layout/toolbar" />
 
@@ -22,7 +24,7 @@
 
             <Button
                 android:background="@drawable/buisnesses_btn"
-                android:id="@+id/btn_buisnesses2"
+                android:id="@+id/btn_buisnesses"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:text="אינדקס עסקים"
@@ -32,7 +34,7 @@
 
             <Button
                 android:background="@drawable/sales_btn"
-                android:id="@+id/btn_sales2"
+                android:id="@+id/btn_sales"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:text="מבצעים חמים"
@@ -51,7 +53,7 @@
 
             <Button
                 android:background="@drawable/contact_btn"
-                android:id="@+id/btn_contact2"
+                android:id="@+id/btn_contact"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:text="צור קשר"
@@ -60,7 +62,7 @@
 
             <Button
                 android:background="@drawable/boards_btn"
-                android:id="@+id/btn_boards2"
+                android:id="@+id/btn_boards"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:text="לוחות"
@@ -69,4 +71,3 @@
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
-

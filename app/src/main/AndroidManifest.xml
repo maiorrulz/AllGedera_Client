@@ -107,6 +107,13 @@
         <activity android:name=".businesses.BusinessesActivity" />
         <activity android:name=".coupons.CouponsActivity" >
         </activity>
+        <activity android:name=".menus.MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
