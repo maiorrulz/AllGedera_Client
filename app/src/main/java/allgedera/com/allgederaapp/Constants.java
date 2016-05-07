@@ -7,4 +7,6 @@ public class Constants {
 
     final static String _TAG = "allgedera[App] :";
     public static String url="http://allgedera.wuemp33qja.us-east-1.elasticbeanstalk.com/restapi/businesses/json";
+    public static String businessUrl="http://allgedera.wuemp33qja.us-east-1.elasticbeanstalk.com/restapi/businesses";
+    public static String couponUrl="http://allgedera.wuemp33qja.us-east-1.elasticbeanstalk.com/restapi/coupons";
 }

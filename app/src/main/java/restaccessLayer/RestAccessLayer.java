@@ -45,7 +45,7 @@ public class RestAccessLayer /*implements Response.Listener<Event[]>, Response.E
     }
 
     public void runJsonRequestGetEvent(final RestCallback.OnResponseSuccess ors, final RestCallback.OnResponseFailure orf) throws IOException {
-        String url = Constants.url;
+        String url = Constants.businessUrl;
         final Request jsonRequest = new GsonRequest<> (url, Event[].class, new Response.Listener<Event[]>(){
             @Override
             public void onResponse(Event[] response) {
@@ -61,7 +61,7 @@ public class RestAccessLayer /*implements Response.Listener<Event[]>, Response.E
     }
 
     public void runJsonRequestGetCoupons(final RestCallback.OnResponseSuccess ors, final RestCallback.OnResponseFailure orf) throws IOException {
-        String url = Constants.url;
+        String url = Constants.couponUrl;
         final Request jsonRequest = new GsonRequest<> (url, Coupon[].class, new Response.Listener<Coupon[]>(){
             @Override
             public void onResponse(Coupon[] response) {

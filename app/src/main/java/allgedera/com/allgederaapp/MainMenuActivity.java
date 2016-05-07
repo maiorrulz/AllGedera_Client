@@ -28,6 +28,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import allgedera.com.allgederaapp.businesses.BusinessesActivity;
+import entities.Business;
+import entities.BusinessManager;
 
 public class MainMenuActivity extends AppCompatActivity implements OnMenuItemClickListener, OnMenuItemLongClickListener {
 
@@ -154,8 +156,11 @@ public class MainMenuActivity extends AppCompatActivity implements OnMenuItemCli
     }
 
     private void openBusinesses() {
-        Intent intent = new Intent(this, BusinessesActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(this, BusinessesActivity.class);
+//        startActivity(intent);
+        Business bm;
+        BusinessManager.loadBusinesses();
+        BusinessManager.getBusinesses();
     }
 
     @Override

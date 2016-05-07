@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import allgedera.com.allgederaapp.App;
+import restaccessLayer.Coupon;
 import restaccessLayer.Event;
 import restaccessLayer.RestAccessLayer;
 import restaccessLayer.RestCallback;
@@ -21,6 +22,7 @@ public class BusinessManager {
 
     static int m_IsDataArrived = 0;
     static Event[] m_BusinessesList = null;
+    static Coupon[] m_CouponsList = null;
 
     public static void loadBusinesses() {
         try {
@@ -43,7 +45,25 @@ public class BusinessManager {
                             ((VolleyError) result).getMessage());
                 }
             };
+            RestCallback.OnResponseSuccess success_Coupon = new RestCallback.OnResponseSuccess<Coupon[]>() {
+                @Override
+                public void onSuccess(Coupon[] result) {
+                    Log.i("matan", "Success Callback");
+                    m_IsDataArrived = 1;
+                    m_CouponsList = result;
+                }
+            };
+            RestCallback.OnResponseFailure failure_Coupon = new RestCallback.OnResponseFailure() {
+                @Override
+                public void onFailure(Object result) {
+                    m_IsDataArrived = -1; //if failed or server down or anything we don't know :) boom!
+                    Log.i("matan", "RestCallback.OnResponseFailure failure " + result.toString()
+                            +
+                            ((VolleyError) result).getMessage());
+                }
+            };
             rel.runJsonRequestGetEvent(success, failure);
+            rel.runJsonRequestGetCoupons(success_Coupon,failure_Coupon);
         } catch (IOException e) {
             Log.i("matan", e.getMessage());
             e.printStackTrace();

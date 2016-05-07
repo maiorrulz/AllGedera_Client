@@ -21,6 +21,7 @@ import allgedera.com.allgederaapp.businesses.expandable.list.BusinessExpandableA
 import allgedera.com.allgederaapp.businesses.expandable.list.BusinessParent;
 import allgedera.com.allgederaapp.businesses.expandable.list.DividerItemDecoration;
 import allgedera.com.allgederaapp.rest.RestAPI;
+import entities.BusinessManager;
 import jp.wasabeef.recyclerview.animators.SlideInUpAnimator;
 import retrofit.Callback;
 import retrofit.RestAdapter;
@@ -52,6 +53,7 @@ public class BusinessesIndexFragment extends Fragment {
         mRecyclerView.addItemDecoration(mItemDecoration);
         mRecyclerView.setItemAnimator(new SlideInUpAnimator());
 
+        requestCoupons();
         requestBusinesses();
         return myView;
     }
@@ -93,6 +95,10 @@ public class BusinessesIndexFragment extends Fragment {
                 error.printStackTrace();
             }
         });
+    }
+
+    private void requestCoupons() {
+        BusinessManager.loadBusinesses();
     }
 
     private ArrayList<ParentObject> generateBusinessList(List<Business> businesses) {

@@ -1,126 +1,165 @@
 package restaccessLayer;
 
-/**
- * Created by Alex on 1/9/2016.
- */
-public class Event {
+public class Event
+{
+
+    public int id;
+
+    public String name;
+
+    public String about;
+
+    public String cost;
+
+    public String category;
+
+    public String address;
+
+    public String phone;
+
+    public Double x_location;
+
+    public Double y_location;
+
+    public String area;
+
+    public String image;
 
 
-    int id;
-
-    String name;
-
-    String about;
-
-    String cost;
-
-    String category;
-
-    String address;
-
-    String phone;
-
-    float x_location;
-
-    float y_location;
-
-    String area;
-
-    String image;
-
-
-    public int getId() {
-        return id;
+    public int getId()
+    {
+        return this.id;
     }
 
-    public void setId(int id) {
+
+    public void setId(int id)
+    {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+
+    public String getName()
+    {
+        return this.name;
     }
 
-    public void setName(String name) {
+
+    public void setName(String name)
+    {
         this.name = name;
     }
 
-    public String getAbout() {
-        return about;
+
+    public String getAbout()
+    {
+        return this.about;
     }
 
-    public void setAbout(String about) {
+
+    public void setAbout(String about)
+    {
         this.about = about;
     }
 
-    public String getCost() {
-        return cost;
+
+    public String getCost()
+    {
+        return this.cost;
     }
 
-    public void setCost(String cost) {
+
+    public void setCost(String cost)
+    {
         this.cost = cost;
     }
 
-    public String getCategory() {
-        return category;
+
+    public String getCategory()
+    {
+        return this.category;
     }
 
-    public void setCategory(String category) {
+
+    public void setCategory(String category)
+    {
         this.category = category;
     }
 
-    public String getAddress() {
-        return address;
+
+    public String getAddress()
+    {
+        return this.address;
     }
 
-    public void setAddress(String address) {
+
+    public void setAddress(String address)
+    {
         this.address = address;
     }
 
-    public String getPhone() {
-        return phone;
+
+    public String getPhone()
+    {
+        return this.phone;
     }
 
-    public void setPhone(String phone) {
+
+    public void setPhone(String phone)
+    {
         this.phone = phone;
     }
 
-    public float getX_location() {
-        return x_location;
+
+    public Double getX_location()
+    {
+        return this.x_location;
     }
 
-    public void setX_location(float x_location) {
+
+    public void setX_location(Double x_location)
+    {
         this.x_location = x_location;
     }
 
-    public float getY_location() {
-        return y_location;
+
+    public Double getY_location()
+    {
+        return this.y_location;
     }
 
-    public void setY_location(float y_location) {
+
+    public void setY_location(Double y_location)
+    {
         this.y_location = y_location;
     }
 
-    public String getArea() {
-        return area;
+
+    public String getArea()
+    {
+        return this.area;
     }
 
-    public void setArea(String area) {
+
+    public void setArea(String area)
+    {
         this.area = area;
     }
 
-    public String getImage() {
-        return image;
+
+    public String getImage()
+    {
+        return this.image;
     }
 
-    public void setImage(String image) {
+
+    public void setImage(String image)
+    {
         this.image = image;
     }
 
-    @Override
-    public String toString() {
-        return String.format("id = %d, name = %s, about = %s "
-                + "cost = %s", id, name, about, cost);
-
+    public String toString()
+    {
+        return String.format("id = %d, name = %s, about = %s cost = %s", new Object[] {
+                Integer.valueOf(this.id), this.name, this.about, this.cost });
     }
 }

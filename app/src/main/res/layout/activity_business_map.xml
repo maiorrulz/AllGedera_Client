@@ -25,7 +25,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_alignParentLeft="true"
-                />
+                tools:layout="@layout/fragment_business_map" />
 
             <satellite.SatelliteMenu
                 android:id="@+id/menu"
