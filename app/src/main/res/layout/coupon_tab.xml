@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#086792">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/iv_couponTab"
+        android:scaleType="fitCenter"
+        android:layout_margin="5dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/tv_couponTab"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="5dp" />
+
+    <View
+        android:id="@+id/coupon_tab_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="#086792" />
+</LinearLayout>

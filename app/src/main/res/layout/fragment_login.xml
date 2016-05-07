@@ -1,0 +1,27 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="allgedera.com.allgederaapp.menus.LoginFragment"
+    android:weightSum="10"
+    android:background="#FFFFFF">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/iv_allGederaLogo"
+        android:scaleType="fitCenter"
+        android:src="@drawable/logo_kol_gadera"
+        android:layout_weight="9" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="התחברות"
+        android:id="@+id/btn_fbLogin"
+        android:layout_weight="1"
+        android:textSize="25dp"
+        android:background="#FFFFFF" />
+</LinearLayout>

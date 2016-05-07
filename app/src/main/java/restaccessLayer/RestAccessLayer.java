@@ -1,22 +1,11 @@
 package restaccessLayer;
 
 import android.content.Context;
-import android.util.Log;
 
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-import org.json.JSONObject;
-
 import java.io.IOException;
-import java.util.Map;
-import java.util.logging.Logger;
-
-import allgedera.com.allgederaapp.Constants;
 
 /**
  * Created by Alex on 1/9/2016.
@@ -44,8 +33,8 @@ public class RestAccessLayer /*implements Response.Listener<Event[]>, Response.E
         return dataAccess;
     }
 
-    public void runJsonRequestGetEvent(final RestCallback.OnResponseSuccess ors, final RestCallback.OnResponseFailure orf) throws IOException {
-        String url = Constants.businessUrl;
+    /*public void runJsonRequestGetEvent(final RestCallback.OnResponseSuccess ors, final RestCallback.OnResponseFailure orf) throws IOException {
+        String url = Constants.url;
         final Request jsonRequest = new GsonRequest<> (url, Event[].class, new Response.Listener<Event[]>(){
             @Override
             public void onResponse(Event[] response) {
@@ -61,7 +50,7 @@ public class RestAccessLayer /*implements Response.Listener<Event[]>, Response.E
     }
 
     public void runJsonRequestGetCoupons(final RestCallback.OnResponseSuccess ors, final RestCallback.OnResponseFailure orf) throws IOException {
-        String url = Constants.couponUrl;
+        String url = Constants.url;
         final Request jsonRequest = new GsonRequest<> (url, Coupon[].class, new Response.Listener<Coupon[]>(){
             @Override
             public void onResponse(Coupon[] response) {
@@ -75,5 +64,5 @@ public class RestAccessLayer /*implements Response.Listener<Event[]>, Response.E
         });
         rQueue.add(jsonRequest);
     }
-
+*/
 }

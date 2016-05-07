@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/coupon_background"
+    android:weightSum="10"
+    android:layout_margin="10dp"
+    android:clickable="true"
+    android:nestedScrollingEnabled="false"
+    android:onClick="goToPurchase">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/coupon_number"
+        android:id="@+id/tv_couponNumber"
+        android:layout_gravity="right"
+        android:gravity="right" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/iv_couponImage"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="fitCenter"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="8"
+        android:src="@drawable/coupon_placeholder" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="שם העסק"
+        android:id="@+id/tv_couponBusiness"
+        android:padding="5dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical|center_horizontal" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/coupon_price"
+        android:id="@+id/tv_couponPrice"
+        android:layout_weight="1"
+        android:singleLine="false"
+        android:gravity="center_vertical|left"
+        android:paddingLeft="22dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/tv_couponDetails" />
+
+</LinearLayout>

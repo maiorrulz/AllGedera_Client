@@ -175,7 +175,7 @@
                         <Button
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
-                            android:text="פנורמה"
+                            android:text="מבט רחוב"
                             android:layout_below="@+id/tv_fragment_work_phone"
                             android:id="@+id/btn_fragment_business_pan_view"
                             style="@style/MyButtonStyle"
