@@ -8,7 +8,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import allgedera.com.allgederaapp.R;
-import allgedera.com.allgederaapp.fourBtnsActivity;
+import allgedera.com.allgederaapp.menus.MainMenuActivity;
+
 import static android.support.test.espresso.Espresso.onData;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
@@ -47,7 +48,7 @@ import org.junit.Test;
 public class MapTest {
 
     @Rule
-    public ActivityTestRule<fourBtnsActivity> mActivityRule =new ActivityTestRule<>(fourBtnsActivity.class);
+    public ActivityTestRule<MainMenuActivity> mActivityRule =new ActivityTestRule<>(MainMenuActivity.class);
 
     @Test
     public void getToBusinesses() {
