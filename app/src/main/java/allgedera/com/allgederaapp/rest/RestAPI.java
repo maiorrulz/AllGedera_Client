@@ -14,7 +14,7 @@ import retrofit.http.Path;
  */
 public interface RestAPI {
 
-    String BASE_URL = "http://allgedera-rest.us-west-2.elasticbeanstalk.com/api";//"http://allgederarest.k5qrryukaz.us-east-1.elasticbeanstalk.com/api";
+    String BASE_URL = "http://allgederaresttest-env.us-east-1.elasticbeanstalk.com/api";//"http://allgederarest.k5qrryukaz.us-east-1.elasticbeanstalk.com/api";
 
     /*
      * @GET("database/businesses") - path from base url
@@ -26,6 +26,6 @@ public interface RestAPI {
     @GET("/database/coupons")
     void getCoupons(Callback<List<Coupon>> response);
 
-    @GET("/database/purchases/{id}/{coupon_id}")
+    @GET("/database/purchases/{coupon_id}")
     void addPurchase(@Path("id") int id, @Path("coupon_id") int coupon_id, Callback<Response> Response);
 }
