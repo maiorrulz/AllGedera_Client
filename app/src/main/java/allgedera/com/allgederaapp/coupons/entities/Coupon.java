@@ -1,22 +1,30 @@
 package allgedera.com.allgederaapp.coupons.entities;
 
+import java.io.Serializable;
+
 /**
  * Created by user0 on 15/04/2016.
  */
-public class Coupon {
+public class Coupon implements Serializable {
 
     private int id;
     private String details;
     private int price;
     private String image;
-    private int business_id;
+    private String name;
+    private String address;
+    private double latitude;
+    private double longitude;
 
-    public Coupon(int id, String details, int price, String image, int business_id) {
+    public Coupon(int id, String details, int price, String image, String name, String address, double latitude, double longitude) {
         this.id = id;
         this.details = details;
         this.price = price;
         this.image = image;
-        this.business_id = business_id;
+        this.name = name;
+        this.address = address;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     public int getId() {
@@ -51,11 +59,35 @@ public class Coupon {
         this.image = image;
     }
 
-    public int getBusiness_id() {
-        return business_id;
+    public String getName() {
+        return name;
     }
 
-    public void setBusiness_id(int business_id) {
-        this.business_id = business_id;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 }

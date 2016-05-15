@@ -37,9 +37,10 @@ public class CouponsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_coupons);
 
         couponFragments = new Fragment[3];
-        couponFragments[0] = new CouponListFragment();
+        CouponListFragment couponListFragment = new CouponListFragment();
+        couponFragments[0] = couponListFragment;
         couponFragments[1] = new CouponPurchaseFragment();
-        couponFragments[2] = ((CouponListFragment)couponFragments[0]).couponMapFragment;
+        couponFragments[2] = couponListFragment.mCouponMapFragment;
 
         mViewPager = (ViewPager) findViewById(R.id.couponsPager);
         mViewPager.setAdapter(new CouponPagerAdapter(getSupportFragmentManager(), this));
