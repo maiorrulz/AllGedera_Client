@@ -34,7 +34,7 @@ public class BusinessMapFragment extends Fragment {
     public static GoogleMap map;
     public static Location myLocation = null;
     public static Polyline currentPath = null;
-    HashMap<Marker, Business> mapBusinesses = new HashMap<Marker, Business>();
+    public HashMap<Marker, Business> mapBusinesses = new HashMap<Marker, Business>();
 
     @Nullable
     @Override

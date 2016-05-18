@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,10 +71,13 @@ public class BusinessDialogFragment extends DialogFragment implements View.OnCli
             tvPhone.setText(business.getPhone());
 
         ImageView imageView = (ParseImageView) view.findViewById(R.id.img_fragment_business_image);
-        if (business.getImage() != null) {
+        if (business.getLogo() != null) {
+            Log.d("image in dialog", "");
             ImageLoader imgLoader = new ImageLoader(getContext());
-            imgLoader.displayImage(business.getImage(), imageView);
+            imgLoader.displayImage(business.getLogo(), imageView);
         }
+        else
+            Log.d("image in dialog", "null");
         //imageView.setImageResource(business.getImage());
         return view;
     }
