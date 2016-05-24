@@ -84,6 +84,18 @@ public class LoginFragment extends Fragment {
                                                 //String str_email = json.getString("email");
                                                 //String str_id = json.getString("id");
                                                 MainActivity.user = json.getString("name");
+                                                //String str_id = json.getString("id");
+                                                String userId = json.getString("id");
+                                                if (userId != null) {
+                                                    try {
+                                                        MainActivity.profileImage = "https://graph.facebook.com/" + userId + "/picture?type=large";
+                                                        //Log.d("in login frag, url:", imageURL.toString());
+                                                        //MainActivity.profileImage = BitmapFactory.decodeStream(imageURL.openConnection().getInputStream());
+                                                        //Log.d("login, pic null?:", MainActivity.profileImage == null ? "yes" : "no");
+                                                    } catch (Exception e) {
+                                                        e.printStackTrace();
+                                                    }
+                                                }
                                                 //String str_lastname = json.getString("last_name");
 
                                                 Log.d("user full name: ", MainActivity.user);// + " " + str_lastname);
