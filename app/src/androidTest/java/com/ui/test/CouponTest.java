@@ -1,16 +1,11 @@
 package com.ui.test;
 
-import android.support.test.espresso.web.webdriver.DriverAtoms;
-import android.support.test.espresso.web.webdriver.Locator;
+import android.provider.Settings;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
-import android.support.test.uiautomator.UiDevice;
-import android.support.test.uiautomator.UiObject;
-import android.support.test.uiautomator.UiObjectNotFoundException;
-import android.support.test.uiautomator.UiSelector;
 import android.view.View;
-import android.widget.EditText;
 
+import org.junit.After;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,10 +18,8 @@ import static android.support.test.espresso.Espresso.onData;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.Espresso.pressBack;
 import static android.support.test.espresso.action.ViewActions.click;
-import static android.support.test.espresso.action.ViewActions.swipeLeft;
-import static android.support.test.espresso.action.ViewActions.swipeRight;
-import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
+import static android.support.test.espresso.matcher.RootMatchers.withDecorView;
 import static android.support.test.espresso.matcher.ViewMatchers.hasSibling;
 import static android.support.test.espresso.matcher.ViewMatchers.isDescendantOfA;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
@@ -35,8 +28,6 @@ import static android.support.test.espresso.matcher.ViewMatchers.withId;
 //============================================================================================
 
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
-import static android.support.test.espresso.web.sugar.Web.onWebView;
-import static android.support.test.espresso.web.webdriver.DriverAtoms.findElement;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.any;
@@ -62,75 +53,60 @@ import org.junit.Test;
  * Created by Alex on 4/23/2016.
  */
 @RunWith(AndroidJUnit4.class)
-public class BusinessTest {
-
-    private UiDevice mDevice;
-
+public class CouponTest {
 
     @Rule
-    public ActivityTestRule<MainActivity> mActivityRule =new ActivityTestRule<>(MainActivity.class);
+    public ActivityTestRule<MainActivity> mActivityRule  = new ActivityTestRule<>(MainActivity.class,true,true);
+
+    @After
+    public void tearDown() {
+        mActivityRule.getActivity().finish();
+        mActivityRule  = new ActivityTestRule<>(MainActivity.class,true,true);
+    }
 
     @Test
-    public void businessTest() {
-
+    public void goToCouponsAndPurchaseTest() {
         onView(withId(R.id. btn_fbLogin)).perform(click());
         try {
             Thread.sleep(5000);
-            onView(allOf(withId(R.id.btn_buisnesses), isDisplayed())).perform(click());
-            Thread.sleep(5000);
+            onView(allOf(withId(R.id.btn_sales), isDisplayed())).perform(click());
+            Thread.sleep(3000);
             //onView(allOf(withId(R.id.businessRecyclerView))).perform(click());
-            Matcher<View> smallTalkView = hasSibling(withText("Small Talk"));
-            onView(allOf(withId(R.id.tv_businessName), smallTalkView)).perform(click());
+            //Matcher<View> smallTalkView = hasSibling(withText("Small Talk"));
+            onView(allOf(withId(R.id.tv_couponNumber), withText("1"))).perform(click());
             Thread.sleep(1500);
-            onView(allOf(withId(R.id.tv_businessName), smallTalkView)).perform(click());
-            Thread.sleep(1500);
-            Matcher<View> pixelView = hasSibling(withText("פיקסל אלבומים גידיטליים"));
-            onView(allOf(withId(R.id.tv_businessName), pixelView)).perform(click());
-            Thread.sleep(1500);
-            onView(allOf(withId(R.id.tv_businessName), pixelView)).perform(click());
+            onView(withId(R.id.btn_makePurchase)).perform(click());
+            onView(withText("התבצעה רכישה")).inRoot(withDecorView(not(is(mActivityRule.getActivity().getWindow().getDecorView())))).check(matches(isDisplayed()));
             Thread.sleep(1500);
             pressBack();
             Thread.sleep(1500);
+            pressBack();
             onView(withId(R.id.btn_buisnesses)).check(matches(isDisplayed()));
 
-        }catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        //onWebView().withElement(findElement(Locator.ID, "Email or Phone")).perform(DriverAtoms.webKeys("ssss"));
-//        try {
-//        Thread.sleep(5000);
-//        UiObject input = mDevice.findObject(new UiSelector()
-//                .instance(1)
-//                .className(EditText.class));
-//
-//            input.setText("text");
-//            Thread.sleep(5000);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        }catch(Exception e){e.printStackTrace();}
 
 
     }
 
     @Test
-    public void mapToBusinessTest() {
-        onView(withId(R.id.btn_fbLogin)).perform(click());
+    public void clickOnCouponViewTest() {
+        onView(withId(R.id. btn_fbLogin)).perform(click());
         try {
             Thread.sleep(5000);
-            onView(allOf(withId(R.id.btn_buisnesses), isDisplayed())).perform(click());
+            onView(allOf(withId(R.id.btn_sales), isDisplayed())).perform(click());
             Thread.sleep(3000);
-            onView((withId(R.id.pagerTabStrip))).perform(swipeLeft());
-            onView(withId(R.id.map)).check(matches(isDisplayed()));
-            onView((withId(R.id.pagerTabStrip))).perform(swipeRight());
+            //onView(allOf(withId(R.id.businessRecyclerView))).perform(click());
+            //Matcher<View> smallTalkView = hasSibling(withText("Small Talk"));
+            onView(allOf(withId(R.id.tv_couponTab),withText("רכישה"))).perform(click());
+            Thread.sleep(1500);
+            onView(allOf(withId(R.id.tv_couponTab),withText("מפה"))).perform(click());
+            Thread.sleep(1500);
+            onView(allOf(withId(R.id.tv_couponTab),withText("קופונים"))).perform(click());
+            Thread.sleep(1500);
             pressBack();
-            Thread.sleep(3000);
             onView(withId(R.id.btn_buisnesses)).check(matches(isDisplayed()));
-            //onView(allOf(withId(R.id.pagerTabStrip), withText("מפת עסקים"))).perform(click());
 
-        } catch (Exception e) {
-            e.printStackTrace();
-
-        }
+        }catch(Exception e){}
     }
 
 
@@ -144,4 +120,4 @@ public class BusinessTest {
 //            // This view is in a different Activity, no need to tell Espresso.
 //            onView(withId(R.id.resultView)).check(matches(withText("NewText")));
 //        }
-    }
+}
