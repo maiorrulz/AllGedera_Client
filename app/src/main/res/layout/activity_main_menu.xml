@@ -60,10 +60,10 @@
 
             <Button
                 android:background="@drawable/boards_btn"
-                android:id="@+id/btn_boards2"
+                android:id="@+id/btn_userProfile"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:text="לוחות"
+                android:text="פרופיל משתמש"
                 style="@style/button_text"
                 android:layout_weight="1" />
         </LinearLayout>

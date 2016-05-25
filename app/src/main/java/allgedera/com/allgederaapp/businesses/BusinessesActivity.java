@@ -12,11 +12,11 @@ import allgedera.com.allgederaapp.businesses.fragments.BusinessesIndexFragment;
 
 public class BusinessesActivity extends AppCompatActivity {
 
-    private ViewPager mViewPager;
+    public ViewPager mViewPager;
     private Fragment businessFragments[];
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_businesses);
 
@@ -30,7 +30,7 @@ public class BusinessesActivity extends AppCompatActivity {
         mViewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
     }
 
-    private class ViewPagerAdapter extends FragmentPagerAdapter {
+    public class ViewPagerAdapter extends FragmentPagerAdapter {
 
         public ViewPagerAdapter(FragmentManager fm) {
             super(fm);

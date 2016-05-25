@@ -7,7 +7,8 @@
     <string name="make_purchase">בצע רכישה</string>
 
     <string name="coupon_number">%1$d</string>
-    <string name="coupon_price">מחיר: %1$d</string>
+    <string name="coupon_price">מחיר: %1$d\u20AA</string>
+    <string name="coupon_business_name">%1$s</string>
     <string name="purchase_header">בחר קופון לביצוע רכישה</string>
     <string name="purchase_number">מספר קופון: %1$d</string>
     <string name="purchase_details">פרטי קופון: %1$s</string>

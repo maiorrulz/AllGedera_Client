@@ -53,7 +53,7 @@ public class CouponAdapter extends RecyclerView.Adapter<CouponViewHolder> {
             ImageLoader imgLoader = new ImageLoader(this.context);
             imgLoader.displayImage(coupons.get(position).getImage(), holder.mCouponImageIV);
         }
-        holder.mCouponBusinessNameTV.setText("" + coupons.get(position).getBusiness_id());
+        holder.mCouponBusinessNameTV.setText(context.getString(R.string.coupon_business_name, coupons.get(position).getName()));
         holder.mCouponPriceTV.setText(context.getString(R.string.coupon_price, coupons.get(position).getPrice()));
         holder.mCouponDetails.setText(context.getString(R.string.purchase_details, coupons.get(position).getDetails()));
     }

@@ -15,6 +15,7 @@ import com.facebook.login.LoginManager;
 import allgedera.com.allgederaapp.R;
 import allgedera.com.allgederaapp.businesses.BusinessesActivity;
 import allgedera.com.allgederaapp.coupons.CouponsActivity;
+import allgedera.com.allgederaapp.profile.UserProfileActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     static CallbackManager mCallbackManager;
     public static boolean loggedIn = false;
     public static String user;
+    public static String profileImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +76,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void openCoupons(View view) {
         Intent intent = new Intent(this, CouponsActivity.class);
+        startActivity(intent);
+    }
+
+    public void openUserProfile(View view) {
+        Intent intent = new Intent(this, UserProfileActivity.class);
         startActivity(intent);
     }
 

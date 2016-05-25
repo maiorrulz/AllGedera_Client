@@ -28,13 +28,13 @@ import retrofit.client.Response;
 public class CouponListFragment extends Fragment {
 
     static final int columns = 2;
-    public CouponMapFragment couponMapFragment;
+    public CouponMapFragment mCouponMapFragment;
     private RecyclerView mCouponRecyclerView;
     private int itemWidth;
     private int itemHeight;
 
     public CouponListFragment() {
-        this.couponMapFragment = new CouponMapFragment();
+        mCouponMapFragment = new CouponMapFragment();
     }
 
     @Override
@@ -80,6 +80,9 @@ public class CouponListFragment extends Fragment {
                 GridLayoutManager gridLayoutManager = new GridLayoutManager(CouponListFragment.this.getContext(), columns);
                 mCouponRecyclerView.setLayoutManager(gridLayoutManager);
                 //mMapFragment.setBusinessOnMap(businesses);
+
+
+                //mCouponMapFragment.setCouponsOnMap(coupons);
             }
 
             @Override

@@ -10,6 +10,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +25,7 @@ import com.google.android.gms.maps.model.Polyline;
 
 import java.util.HashMap;
 import java.util.List;
+
 import allgedera.com.allgederaapp.R;
 import allgedera.com.allgederaapp.businesses.entities.Business;
 
@@ -32,12 +34,12 @@ public class BusinessMapFragment extends Fragment {
     public static GoogleMap map;
     public static Location myLocation = null;
     public static Polyline currentPath = null;
-    HashMap<Marker, Business> mapBusinesses = new HashMap<Marker, Business>();
+    public HashMap<Marker, Business> mapBusinesses = new HashMap<Marker, Business>();
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_map, container, false);
+        View view = inflater.inflate(R.layout.fragment_businesses_map, container, false);
         map = getMapFragment().getMap();
         map.setInfoWindowAdapter(onBusinessInfoWindowClickListener);
         map.setMyLocationEnabled(true);
@@ -53,7 +55,7 @@ public class BusinessMapFragment extends Fragment {
         } else {
             fm = getChildFragmentManager();
         }
-        return (SupportMapFragment) fm.findFragmentById(R.id.map);
+        return (SupportMapFragment) fm.findFragmentById(R.id.businesses_map);
     }
 
     private void goToMyLocation() {

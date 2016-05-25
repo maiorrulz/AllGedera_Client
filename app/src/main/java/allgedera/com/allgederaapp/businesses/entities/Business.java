@@ -19,7 +19,9 @@ public class Business implements Serializable {
     private String image;
     private String logo;
 
-    public Business(String id, String name, String category, String about, String city, String address, String phone, double latitude, double longitude, String image, String logo) {
+    public Business(String id, String name, String category,
+                    String about, String city, String address,
+                    String phone, double latitude, double longitude, String image, String logo) {
         this.id = id;
         this.name = name;
         this.category = category;
