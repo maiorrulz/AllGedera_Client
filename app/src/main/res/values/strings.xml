@@ -3,8 +3,8 @@
     <string name="action_settings">Settings</string>
     <string name="press_to_see_more">"לחץ לפרטים נוספים"</string>
     <string name="context_menu">Context menu</string>
-    <string name="app_id">1010525542318257</string>
-    <string name="make_purchase">בצע רכישה</string>
+    <string name="app_id">538011236355972</string>
+    <string name="gotoPurchase">מסך רכישה</string>
 
     <string name="coupon_number">%1$d</string>
     <string name="coupon_price">מחיר: %1$d\u20AA</string>
@@ -13,12 +13,37 @@
     <string name="purchase_number">מספר קופון: %1$d</string>
     <string name="purchase_details">פרטי קופון: %1$s</string>
 
+    <!-- ***************- makePurchase screen strings -*************** -->
+    <string name="to_pay">לתשלום: %1$d\u20AA</string>
+    <string name="coupon_to_purchase">רכישת קופון מספר %1$d</string>
+    <string name="confirm_purchase">רכישה</string>
+    <string name="cancel_purchase">ביטול</string>
+    <!-- ***************- makePurchase screen strings -*************** -->
+
+    <!-- ***************- User Profile screen strings -*************** -->
+    <string name="num_of_purchases">סה"כ רכישות: %1$d</string>
+    <string name="total_purchase_sum">סה"כ שולם: %1$d\u20AA</string>
+    <string name="goto_my_purchases">הרכישות שלי</string>
+    <!-- ***************- User Profile screen strings -*************** -->
+
+    <!-- ***************- User Purchases screen strings -*************** -->
+    <string name="coupon_purchased">קופון שנרכש: %1$d</string>
+    <string name="purchase_date">תאריך רכישה:</string>
+    <string name="date">%1$s</string>
+    <string name="paid">שולם: %1$d\u20AA</string>
+    <string name="credit">כרטיס אשראי: %1$d</string>
+    <string name="receipt">קבלה:</string>
+    <string name="receipt_number">%1$s</string>
+    <string name="back_to_profile">חזרה לפרופיל</string>
+    <!-- ***************- User Purchases screen strings -*************** -->
+
     <string-array name="coupon_tabs">
         <item>קופונים</item>
         <item>רכישה</item>
         <item>מפה</item>
     </string-array>
 
-<!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

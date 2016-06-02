@@ -22,7 +22,7 @@ import retrofit.client.Response;
  */
 public class CouponPurchaseFragment extends Fragment {
 
-    public int couponId;
+    public int couponId, price;
     public TextView mPurchaseHeader;
     public ImageView mPurchaseImage;
     public TextView mPurchaseDetails;

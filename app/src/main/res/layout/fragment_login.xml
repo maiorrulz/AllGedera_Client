@@ -17,13 +17,11 @@
         android:layout_weight="9" />
 
     <Button
-        android:layout_width="154dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="התחברות"
         android:id="@+id/btn_fbLogin"
+        android:layout_weight="1"
         android:textSize="25dp"
-        android:background="#9699f1"
-        android:layout_gravity="center_horizontal"
-        android:backgroundTint="#9699f1"
-        android:backgroundTintMode="screen" />
+        android:background="#FFFFFF" />
 </LinearLayout>

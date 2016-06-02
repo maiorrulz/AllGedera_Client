@@ -45,7 +45,7 @@ import org.junit.Test;
  * Created by Alex on 4/23/2016.
  */
 @RunWith(AndroidJUnit4.class)
-public class BusinessTest {
+public class MapTest {
 
     @Rule
     public ActivityTestRule<MainMenuActivity> mActivityRule =new ActivityTestRule<>(MainMenuActivity.class);
@@ -83,4 +83,4 @@ public class BusinessTest {
 //            // This view is in a different Activity, no need to tell Espresso.
 //            onView(withId(R.id.resultView)).check(matches(withText("NewText")));
 //        }
-    }
+}

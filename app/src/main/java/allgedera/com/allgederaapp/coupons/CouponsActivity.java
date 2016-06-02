@@ -15,6 +15,7 @@ import android.widget.Toast;
 import allgedera.com.allgederaapp.R;
 import allgedera.com.allgederaapp.coupons.fragments.CouponListFragment;
 import allgedera.com.allgederaapp.coupons.fragments.CouponPurchaseFragment;
+import allgedera.com.allgederaapp.coupons.fragments.PaymentDialogFragment;
 import allgedera.com.allgederaapp.rest.RestAPI;
 import retrofit.Callback;
 import retrofit.RestAdapter;
@@ -90,6 +91,10 @@ public class CouponsActivity extends AppCompatActivity {
         TextView couponDetails = (TextView) view.findViewById(R.id.tv_couponDetails);
 
         couponPurchaseFragment.couponId = Integer.parseInt(couponNumber.getText().toString());
+        String priceStr = couponPrice.getText().toString();
+        priceStr = priceStr.substring(priceStr.indexOf(":") + 2);
+        couponPurchaseFragment.price = Integer.parseInt(priceStr.substring(0, priceStr.indexOf("\u20AA")));
+
         couponPurchaseFragment.mPurchaseHeader.setText(getString(R.string.purchase_number, Integer.parseInt(couponNumber.getText().toString())));
         couponPurchaseFragment.mPurchaseImage.setImageDrawable(couponImage.getDrawable());
         couponPurchaseFragment.mPurchaseDetails.setText(couponDetails.getText());
@@ -97,34 +102,14 @@ public class CouponsActivity extends AppCompatActivity {
         mViewPager.setCurrentItem(1);
     }
 
-    public void purchaseCoupon(View view) {
+    public void goToPurchaseScreen(View view) {
+        CouponPurchaseFragment couponPurchaseFragment;
+        couponPurchaseFragment = (CouponPurchaseFragment) couponFragments[1];
 
-        final CouponPurchaseFragment couponPurchaseFragment = (CouponPurchaseFragment) this.couponFragments[1];
-
-        if (couponPurchaseFragment.couponId == -1) {
-            Toast.makeText(view.getContext(), "לא נבחר קופון", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        RestAdapter adapter = new RestAdapter.Builder().setEndpoint(RestAPI.BASE_URL).build();
-        /*
-         *  create an instance of the api that implements the methods needed to
-         *  make requests to the server
-         */
-        RestAPI restAPI = adapter.create(RestAPI.class);
-
-        restAPI.addPurchase(0, couponPurchaseFragment.couponId, new Callback<Response>() {
-            @Override
-            public void success(Response response, Response response2) {
-                Toast.makeText(couponPurchaseFragment.getContext(), "התבצעה רכישה", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void failure(RetrofitError error) {
-
-            }
-    });
+        PaymentDialogFragment paymentDialog = new PaymentDialogFragment();
+        paymentDialog.couponId = couponPurchaseFragment.couponId;
+        paymentDialog.price = couponPurchaseFragment.price;
+        paymentDialog.show(getFragmentManager(), "PaymentDialog");
     }
-
 
 }

@@ -34,12 +34,12 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/make_purchase"
+        android:text="@string/gotoPurchase"
         android:id="@+id/btn_makePurchase"
         android:background="@drawable/btn_yellow"
         android:textSize="22dp"
         android:enabled="false"
         android:focusable="false"
-        android:onClick="purchaseCoupon" />
+        android:onClick="goToPurchaseScreen" />
 
 </LinearLayout>
