@@ -64,6 +64,11 @@ public class PaymentDialogFragment extends DialogFragment {
          */
                                                 RestAPI restAPI = adapter.create(RestAPI.class);
 
+                                                if (mETCreditNumber.getText().length() == 0 || mETValidityMonth.getText().length() == 0 || mETValidityYear.getText().length() == 0) {
+                                                    Toast.makeText(getActivity().getApplicationContext(), "שגיאה: אנא מלא כל הפרטים לביצוע רכישה", Toast.LENGTH_LONG).show();
+                                                    return;
+                                                }
+
 
                                                 Calendar c = Calendar.getInstance();
                                                 SimpleDateFormat sdf = new SimpleDateFormat("dd:MMMM:yyyy HH:mm:ss a");
