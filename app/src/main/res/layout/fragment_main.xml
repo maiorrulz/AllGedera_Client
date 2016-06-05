@@ -58,7 +58,8 @@
                 android:layout_height="fill_parent"
                 android:text="צור קשר"
                 style="@style/button_text"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:onClick="openContactUs"/>
 
             <Button
                 android:background="@drawable/boards_btn"

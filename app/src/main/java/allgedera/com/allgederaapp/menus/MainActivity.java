@@ -14,6 +14,7 @@ import com.facebook.login.LoginManager;
 
 import allgedera.com.allgederaapp.R;
 import allgedera.com.allgederaapp.businesses.BusinessesActivity;
+import allgedera.com.allgederaapp.contact.ContactUsActivity;
 import allgedera.com.allgederaapp.coupons.CouponsActivity;
 import allgedera.com.allgederaapp.profile.UserProfileActivity;
 
@@ -81,6 +82,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void openUserProfile(View view) {
         Intent intent = new Intent(this, UserProfileActivity.class);
+        startActivity(intent);
+    }
+
+    public void openContactUs(View view) {
+        Intent intent = new Intent(this, ContactUsActivity.class);
         startActivity(intent);
     }
 

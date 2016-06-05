@@ -86,10 +86,9 @@
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity android:name=".menus.MainMenuActivity" >
-        </activity>
         <activity android:name=".businesses.BusinessesActivity" />
         <activity android:name=".coupons.CouponsActivity" >
+            <activity android:name=".contact.ContactUsActivity" />
         </activity>
         <activity android:name=".menus.MainActivity" >
             <intent-filter>
@@ -100,6 +99,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".profile.UserProfileActivity" >
+        </activity>
+        <activity android:name=".contact.ContactUsActivity" >
         </activity>
     </application>
 
