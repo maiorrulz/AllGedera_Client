@@ -1,8 +1,6 @@
 package allgedera.com.allgederaapp.businesses.entities;
 
-/**
- * Created by user0 on 03/04/2016.
- */
+
 public class BusinessChild {
 
     private String imageUrl;

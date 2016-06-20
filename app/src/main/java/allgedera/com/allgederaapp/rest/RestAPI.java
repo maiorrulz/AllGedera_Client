@@ -12,12 +12,10 @@ import retrofit.http.GET;
 import retrofit.http.POST;
 import retrofit.http.Path;
 
-/**
- * Created by user0 on 31/03/2016.
- */
+
 public interface RestAPI {
 
-    String BASE_URL = "http://allgederarest.k5qrryukaz.us-east-1.elasticbeanstalk.com/api";//"http://allgederarest.k5qrryukaz.us-east-1.elasticbeanstalk.com/api";
+    String BASE_URL = "http://192.168.43.198:8080/com.allgedera.rest/api";//"http://allgederarest.k5qrryukaz.us-east-1.elasticbeanstalk.com/api";
 
     /*
      * @GET("database/businesses") - path from base url

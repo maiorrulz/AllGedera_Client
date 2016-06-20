@@ -7,9 +7,6 @@ import com.bignerdranch.expandablerecyclerview.ViewHolder.ParentViewHolder;
 
 import allgedera.com.allgederaapp.R;
 
-/**
- * Created by user0 on 02/06/2016.
- */
 public class PurchaseParentViewHolder extends ParentViewHolder {
 
     public TextView mCouponPurchased;

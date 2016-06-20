@@ -5,9 +5,7 @@ import com.bignerdranch.expandablerecyclerview.Model.ParentObject;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by user0 on 02/04/2016.
- */
+
 public class BusinessParent implements ParentObject {
 
     private String name;

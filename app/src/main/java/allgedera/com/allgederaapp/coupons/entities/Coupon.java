@@ -2,9 +2,7 @@ package allgedera.com.allgederaapp.coupons.entities;
 
 import java.io.Serializable;
 
-/**
- * Created by user0 on 15/04/2016.
- */
+
 public class Coupon implements Serializable {
 
     private int id;

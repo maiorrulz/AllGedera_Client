@@ -9,9 +9,7 @@ import com.bignerdranch.expandablerecyclerview.ViewHolder.ChildViewHolder;
 
 import allgedera.com.allgederaapp.R;
 
-/**
- * Created by user0 on 03/04/2016.
- */
+
 public class BusinessChildViewHolder extends ChildViewHolder {
 
     public ImageView mBusinessImageIV;

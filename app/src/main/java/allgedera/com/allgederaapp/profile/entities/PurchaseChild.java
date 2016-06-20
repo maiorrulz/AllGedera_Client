@@ -1,8 +1,5 @@
 package allgedera.com.allgederaapp.profile.entities;
 
-/**
- * Created by user0 on 02/06/2016.
- */
 public class PurchaseChild {
 
     int price;

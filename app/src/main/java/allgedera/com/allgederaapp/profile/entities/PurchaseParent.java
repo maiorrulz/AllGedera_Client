@@ -4,9 +4,6 @@ import com.bignerdranch.expandablerecyclerview.Model.ParentObject;
 
 import java.util.List;
 
-/**
- * Created by user0 on 02/06/2016.
- */
 public class PurchaseParent implements ParentObject {
 
     int coupon_id;

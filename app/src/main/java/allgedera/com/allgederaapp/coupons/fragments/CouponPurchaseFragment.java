@@ -8,18 +8,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import allgedera.com.allgederaapp.R;
-import allgedera.com.allgederaapp.rest.RestAPI;
-import retrofit.Callback;
-import retrofit.RestAdapter;
-import retrofit.RetrofitError;
-import retrofit.client.Response;
 
-/**
- * Created by user0 on 16/04/2016.
- */
 public class CouponPurchaseFragment extends Fragment {
 
     public int couponId, price;

@@ -15,9 +15,6 @@ import allgedera.com.allgederaapp.coupons.entities.Purchase;
 import allgedera.com.allgederaapp.profile.entities.PurchaseChild;
 import allgedera.com.allgederaapp.profile.entities.PurchaseParent;
 
-/**
- * Created by user0 on 02/06/2016.
- */
 public class PurchaseExpandableAdapter extends ExpandableRecyclerAdapter<PurchaseParentViewHolder, PurchaseChildViewHolder> {
 
     private LayoutInflater mInflater;

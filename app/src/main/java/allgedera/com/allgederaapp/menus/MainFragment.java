@@ -23,9 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import allgedera.com.allgederaapp.R;
-/**
- * A simple {@link Fragment} subclass.
- */
+
 public class MainFragment extends Fragment {
 
     private View view;

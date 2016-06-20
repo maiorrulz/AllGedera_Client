@@ -2,9 +2,7 @@ package allgedera.com.allgederaapp.businesses.entities;
 
 import java.io.Serializable;
 
-/**
- * Created by user0 on 29/03/2016.
- */
+
 public class Business implements Serializable {
 
     private String id;

@@ -25,9 +25,6 @@ import java.util.Arrays;
 
 import allgedera.com.allgederaapp.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class LoginFragment extends Fragment {
 
 

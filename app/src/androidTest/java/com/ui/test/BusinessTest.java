@@ -1,9 +1,7 @@
 package com.ui.test;
 
-import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
-import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -14,17 +12,10 @@ import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
-//============================================================================================
-//============================================================================================
-
-import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.allOf;
-import static org.hamcrest.Matchers.anyOf;
-import static org.hamcrest.Matchers.anything;
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.not;
-import static org.hamcrest.Matchers.notNullValue;
-import static org.hamcrest.Matchers.nullValue;
+
+//============================================================================================
+//============================================================================================
 
 /**
  * Created by Alex on 4/23/2016.
@@ -32,8 +23,8 @@ import static org.hamcrest.Matchers.nullValue;
 @RunWith(AndroidJUnit4.class)
 public class BusinessTest {
 
-    @Rule
-    public ActivityTestRule<MainMenuActivity> mActivityRule =new ActivityTestRule<>(MainMenuActivity.class);
+    //@Rule
+    //public ActivityTestRule<MainMenuActivity> mActivityRule =new ActivityTestRule<>(MainMenuActivity.class);
 
     @Test
     public void getToBusinesses() {

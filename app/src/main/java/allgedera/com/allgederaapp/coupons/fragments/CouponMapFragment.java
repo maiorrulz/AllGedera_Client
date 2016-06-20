@@ -28,9 +28,6 @@ import java.util.List;
 import allgedera.com.allgederaapp.R;
 import allgedera.com.allgederaapp.coupons.entities.Coupon;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class CouponMapFragment extends Fragment {
 
     public static GoogleMap map;

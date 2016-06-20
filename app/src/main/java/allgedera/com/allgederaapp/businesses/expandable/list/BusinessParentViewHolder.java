@@ -8,9 +8,7 @@ import com.bignerdranch.expandablerecyclerview.ViewHolder.ParentViewHolder;
 
 import allgedera.com.allgederaapp.R;
 
-/**
- * Created by user0 on 03/04/2016.
- */
+
 public class BusinessParentViewHolder extends ParentViewHolder {
 
     public TextView mBusinessNameTV;

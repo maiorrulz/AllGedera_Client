@@ -22,9 +22,6 @@ import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class CouponListFragment extends Fragment {
 
     static final int columns = 2;

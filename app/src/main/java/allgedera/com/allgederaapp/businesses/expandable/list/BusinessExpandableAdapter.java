@@ -15,9 +15,7 @@ import allgedera.com.allgederaapp.businesses.entities.BusinessChild;
 import allgedera.com.allgederaapp.businesses.entities.BusinessParent;
 import allgedera.com.allgederaapp.urlImages.ImageLoader;
 
-/**
- * Created by user0 on 03/04/2016.
- */
+
 public class BusinessExpandableAdapter extends ExpandableRecyclerAdapter<BusinessParentViewHolder, BusinessChildViewHolder> {
 
     private LayoutInflater mInflater;

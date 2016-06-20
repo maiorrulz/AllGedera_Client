@@ -15,9 +15,6 @@ import allgedera.com.allgederaapp.R;
 import allgedera.com.allgederaapp.businesses.fragments.BusinessMapFragment;
 import allgedera.com.allgederaapp.coupons.entities.Coupon;
 
-/**
- * Created by user0 on 15/05/2016.
- */
 public class CouponBusinessDialogFragment extends DialogFragment implements View.OnClickListener {
 
     private Coupon coupon;

@@ -1,8 +1,5 @@
 package allgedera.com.allgederaapp.coupons.entities;
 
-/**
- * Created by user0 on 27/05/2016.
- */
 public class Purchase {
 
     int id;
