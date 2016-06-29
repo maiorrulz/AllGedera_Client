@@ -1,5 +1,6 @@
 package allgedera.com.allgederaapp.businesses.fragments;
 
+import android.app.Activity;
 import android.content.Context;
 import android.location.Criteria;
 import android.location.Location;
@@ -34,6 +35,7 @@ public class BusinessMapFragment extends Fragment {
     public static GoogleMap map;
     public static Location myLocation = null;
     public static Polyline currentPath = null;
+    private static Activity myA;
     public HashMap<Marker, Business> mapBusinesses = new HashMap<Marker, Business>();
 
     @Nullable
@@ -44,6 +46,7 @@ public class BusinessMapFragment extends Fragment {
         map.setInfoWindowAdapter(onBusinessInfoWindowClickListener);
         map.setMyLocationEnabled(true);
         map.getUiSettings().setZoomControlsEnabled(false);
+        myA = getActivity();
         goToMyLocation();
         return view;
     }
@@ -74,6 +77,23 @@ public class BusinessMapFragment extends Fragment {
             map.moveCamera(CameraUpdateFactory.newLatLng(latLng));
             map.animateCamera(CameraUpdateFactory.zoomTo(14));
             this.myLocation = myLocation;
+        }
+    }
+
+    public static void goToLocation(double latitude, double longitude) {
+        // Get LocationManager object from System Service LOCATION_SERVICE
+        LocationManager locationManager = (LocationManager) myA.getSystemService(Context.LOCATION_SERVICE);
+        // Create a criteria object to retrieve provider
+        Criteria criteria = new Criteria();
+        // Get the name of the best provider
+        String provider = locationManager.getBestProvider(criteria, true);
+        // Get Current Location
+        Location myLocation = locationManager.getLastKnownLocation(provider);
+        if(myLocation!=null) {
+            LatLng latLng = new LatLng(latitude, longitude);
+            map.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+            map.animateCamera(CameraUpdateFactory.zoomTo(14));
+            //this.myLocation = myLocation;
         }
     }
 
@@ -110,6 +130,7 @@ public class BusinessMapFragment extends Fragment {
             businessDialogFragment.setArguments(bundle);
             businessDialogFragment.setStyle(DialogFragment.STYLE_NO_TITLE, 0);
             businessDialogFragment.show(getActivity().getSupportFragmentManager(), "Business");
+            businessDialogFragment.context = getContext();
             return businessDialogFragment.getView();
         }
     };

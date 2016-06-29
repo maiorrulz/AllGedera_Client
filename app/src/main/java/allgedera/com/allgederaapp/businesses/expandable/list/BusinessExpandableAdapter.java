@@ -4,15 +4,16 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.bignerdranch.expandablerecyclerview.Adapter.ExpandableRecyclerAdapter;
 
 import java.util.List;
 
 import allgedera.com.allgederaapp.R;
+import allgedera.com.allgederaapp.businesses.BusinessesActivity;
 import allgedera.com.allgederaapp.businesses.entities.BusinessChild;
 import allgedera.com.allgederaapp.businesses.entities.BusinessParent;
+import allgedera.com.allgederaapp.businesses.fragments.BusinessMapFragment;
 import allgedera.com.allgederaapp.urlImages.ImageLoader;
 
 
@@ -52,7 +53,7 @@ public class BusinessExpandableAdapter extends ExpandableRecyclerAdapter<Busines
 
     @Override
     public void onBindChildViewHolder(final BusinessChildViewHolder businessChildViewHolder, int i, Object childObject) {
-        BusinessChild businessChild = (BusinessChild) childObject;
+        final BusinessChild businessChild = (BusinessChild) childObject;
         if (businessChild.getImageUrl() != null) {
             ImageLoader imgLoader = new ImageLoader(this.context);
             imgLoader.displayImage(businessChild.getImageUrl(), businessChildViewHolder.mBusinessImageIV);
@@ -73,7 +74,10 @@ public class BusinessExpandableAdapter extends ExpandableRecyclerAdapter<Busines
 
             @Override
             public void onClick(View v) {
-                Toast.makeText(v.getContext(), "center", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(v.getContext(), "center", Toast.LENGTH_SHORT).show();
+                BusinessesActivity.mViewPager.setCurrentItem(1);
+                BusinessMapFragment.goToLocation(businessChild.getLatitude(), businessChild.getLongitude());
+
             }
         });
     }

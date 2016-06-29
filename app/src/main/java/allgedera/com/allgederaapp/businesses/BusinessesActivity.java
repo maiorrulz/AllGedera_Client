@@ -12,7 +12,7 @@ import allgedera.com.allgederaapp.businesses.fragments.BusinessesIndexFragment;
 
 public class BusinessesActivity extends AppCompatActivity {
 
-    public ViewPager mViewPager;
+    public static ViewPager mViewPager;
     private Fragment businessFragments[];
 
     @Override

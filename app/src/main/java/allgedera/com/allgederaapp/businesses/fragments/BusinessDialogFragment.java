@@ -1,5 +1,6 @@
 package allgedera.com.allgederaapp.businesses.fragments;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -15,7 +16,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.model.LatLng;
-import com.parse.ParseImageView;
 
 import allgedera.com.allgederaapp.R;
 import allgedera.com.allgederaapp.businesses.entities.Business;
@@ -31,6 +31,7 @@ public class BusinessDialogFragment extends DialogFragment implements View.OnCli
     private Business business;
     private Button btnNav, btnShowWay, panView;
     private ImageView imgExit;
+    public Context context;
 
 
     @Override
@@ -70,10 +71,10 @@ public class BusinessDialogFragment extends DialogFragment implements View.OnCli
         if (business.getPhone() != null)
             tvPhone.setText(business.getPhone());
 
-        ImageView imageView = (ParseImageView) view.findViewById(R.id.img_fragment_business_image);
+        ImageView imageView = (ImageView) view.findViewById(R.id.img_fragment_business_image);
         if (business.getLogo() != null) {
-            Log.d("image in dialog", "");
-            ImageLoader imgLoader = new ImageLoader(getContext());
+            System.out.println("image = " + business.getLogo());
+            ImageLoader imgLoader = new ImageLoader(context);
             imgLoader.displayImage(business.getLogo(), imageView);
         }
         else

@@ -15,7 +15,7 @@ import retrofit.http.Path;
 
 public interface RestAPI {
 
-    String BASE_URL = "http://192.168.43.198:8080/com.allgedera.rest/api";//"http://allgederarest.k5qrryukaz.us-east-1.elasticbeanstalk.com/api";
+    String BASE_URL = "http://10.0.0.13:8080/com.allgedera.rest/api";//"http://allgederarest.k5qrryukaz.us-east-1.elasticbeanstalk.com/api";
 
     /*
      * @GET("database/businesses") - path from base url
